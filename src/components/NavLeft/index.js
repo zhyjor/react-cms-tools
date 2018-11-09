@@ -1,8 +1,8 @@
 import React from 'react'
-import { Menu, Icon } from 'antd';
+import { Menu } from 'antd';
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { switchMenu, saveBtnList } from './../../redux/action'
+import { switchMenu } from './../../redux/action'
 import MenuConfig from './../../config/menuConfig'
 import './index.less'
 const SubMenu = Menu.SubMenu;
@@ -12,7 +12,7 @@ class NavLeft extends React.Component {
     }
     // 菜单点击
     handleClick = ({ item, key }) => {
-        if (key == this.state.currentKey) {
+        if (key === this.state.currentKey) {
             return false;
         }
         // 事件派发，自动调用reducer，通过reducer保存到store对象中
@@ -58,7 +58,7 @@ class NavLeft extends React.Component {
             <div>
                 <NavLink to="/home" onClick={this.homeHandleClick}>
                     <div className="logo">
-                        <img src="/assets/logo-ant.svg" alt=""/>
+                        <img src="./assets/logo-ant.svg" alt=""/>
                         <h1>Imooc MS</h1>
                     </div>
                 </NavLink>

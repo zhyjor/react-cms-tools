@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Form } from 'antd'
+import { Card } from 'antd'
 import axios from '../../axios/index'
 import BaseForm from '../../components/BaseForm'
 export default class Order extends React.Component{
@@ -73,7 +73,7 @@ export default class Order extends React.Component{
         // map.clearOverlays();
 
         //添加起始图标
-        let startPointIcon = new window.BMap.Icon("/assets/start_point.png", new window.BMap.Size(36, 42), {
+        let startPointIcon = new window.BMap.Icon("./assets/start_point.png", new window.BMap.Size(36, 42), {
             imageSize: new window.BMap.Size(36, 42),
             anchor: new window.BMap.Size(18, 42)
         });
@@ -81,7 +81,7 @@ export default class Order extends React.Component{
         var bikeMarkerStart = new window.BMap.Marker(startPoint, { icon: startPointIcon });
         this.map.addOverlay(bikeMarkerStart);
 
-        let endPointIcon = new window.BMap.Icon("/assets/end_point.png", new window.BMap.Size(36, 42), {
+        let endPointIcon = new window.BMap.Icon("./assets/end_point.png", new window.BMap.Size(36, 42), {
             imageSize: new window.BMap.Size(36, 42),
             anchor: new window.BMap.Size(18, 42)
         });
@@ -119,7 +119,7 @@ export default class Order extends React.Component{
 
         // 添加地图中的自行车
         let bikeList = res.bike_list;
-        let bikeIcon = new window.BMap.Icon("/assets/bike.jpg", new window.BMap.Size(36, 42), {
+        let bikeIcon = new window.BMap.Icon("./assets/bike.jpg", new window.BMap.Size(36, 42), {
             imageSize: new window.BMap.Size(36, 42),
             anchor: new window.BMap.Size(18, 42)
         });

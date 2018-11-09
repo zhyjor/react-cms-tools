@@ -1,8 +1,6 @@
 /**
  * reducer
  */
-
-import { combineReducers } from 'redux'
 import { type } from '../action';
 const ebikeData = (state, action) => {
     switch (action.type) {

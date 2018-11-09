@@ -23,7 +23,7 @@ export default class Order extends React.Component {
         }
       })
       .then(res => {
-        if (res.code == 0) {
+        if (Number(res.code) === 0) {
           let list = res.result.item_list.map((item, i) => {
             item.key = i;
             return item;
@@ -148,7 +148,7 @@ export default class Order extends React.Component {
           title: dataSource[i].user_name,
           status: dataSource[i].status
         };
-        if (data.status == 1) {
+        if (Number(data.status) === 1) {
           targetKeys.push(data.key);
         }
         mockData.push(data);
@@ -205,7 +205,7 @@ export default class Order extends React.Component {
         title: "使用状态",
         dataIndex: "status",
         render(status) {
-          if (status == 1) {
+          if (Number(status) === 1) {
             return "启用";
           } else {
             return "停用";
